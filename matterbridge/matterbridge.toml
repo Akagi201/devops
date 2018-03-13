@@ -1,0 +1,68 @@
+[irc]
+  [irc.freenode]
+  Server="irc.freenode.net:6667"
+  Nick="slackbridge"
+
+[slack]
+  [slack.cryptotrader-devops]
+  Token="xoxp-216509284179-216716725857-217309412212-f41dc5489f33dac8ff1921bba6bfac73"
+  PrefixMessagesWithNick=false
+  IgnoreMessages="^@"
+
+#[matrix]
+#  [matrix.polkadot-watercooler]
+#  Server="https://matrix.org"
+#  Login="riotbridge"
+#  Password="Goodluck201"
+
+[general]
+  RemoteNickFormat="<{NICK}>"
+
+[[gateway]]
+    name = "filecoingateway"
+    enable=true
+
+    [[gateway.inout]]
+    account = "irc.freenode"
+    channel="#filecoin"
+
+    [[gateway.inout]]
+    account ="slack.cryptotrader-devops"
+    channel = "filecoin"
+
+[[gateway]]
+    name = "ipfsgateway"
+    enable=true
+
+    [[gateway.inout]]
+    account = "irc.freenode"
+    channel="#ipfs"
+
+    [[gateway.inout]]
+    account ="slack.cryptotrader-devops"
+    channel = "ipfs"
+
+[[gateway]]
+    name = "akmakergateway"
+    enable=true
+
+    [[gateway.inout]]
+    account = "irc.freenode"
+    channel="#akmaker"
+
+    [[gateway.inout]]
+    account ="slack.cryptotrader-devops"
+    channel = "akmaker"
+
+[[gateway]]
+    name = "polkadot-watercoolergateway"
+    enable = false
+
+    [[gateway.inout]]
+    account = "matrix.polkadot-watercooler"
+    channel = "#polkadot-watercooler:matrix.org"
+
+    [[gateway.inout]]
+    account = "slack.cryptotrader-devops"
+    channel = "polkadot-wattercooler"
+

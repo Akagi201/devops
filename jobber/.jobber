@@ -48,10 +48,10 @@
 - name: eos
   cmd: |
       cd /root/src/github.com/Akagi201/dockerfile/eos
-      docker build -t akagi201/eos .
-      docker tag akagi201/eos akagi201/eos:`date +%Y%m%d`
-      docker push akagi201/eos
+      docker build -t akagi201/eos:`date +%Y%m%d` .
+      docker tag akagi201/eos:`date +%Y%m%d` akagi201/eos
       docker push akagi201/eos:`date +%Y%m%d`
+      docker push akagi201/eos
   time: 0 0 12 * * *
   onError: Stop
   notifyOnError: false
